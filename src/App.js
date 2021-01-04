@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import todoPage from './pages/todoPage';
+import TodoPage from './pages/TodoPage';
 
 function App() {
   return (
     <div className="App">
-      <todoPage/>
+      <TodoPage/>
     </div>
   );
 }

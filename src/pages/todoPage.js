@@ -1,34 +1,54 @@
 import axios from "axios";
-import "todoPage.css"
+import "./todoPage.css"
+import TodoMission from "../models/TodoMission"
+import { Button, Card } from "react-bootstrap";
+import TodoCard from "../components/TodoCard";
 
 const { useState, useEffect } = require("react");
 
-
-
-function todoPage(props){
+function TodoPage(){
     
     const [todoList, setTodoList] = useState([]);
-    const [todoFilter, setTodoFilter] = useState("");
+    const [todoFilterAll, setTodoFilterAll] = useState(true);
+    const [todoFilterComplete, setTodoFilterComplete] = useState(false)
+    const [todoFilterActive, setTodoFilterActive] = useState(false)
+    
     let listToView = [];
     let activCounter = 0;
+
     useEffect(() => {
-        const newList = axios.get("todos.json").then(res => {
-            res.data.map(plainTodo => new TodoMission(plainTodo));
-        });
-        setTodoList(newList.filter(todo => (todo.status.includes(todoFilter))));
-        activCounter = newList.filter(todo => (todo.status.includes("active"))).size;
+        axios.get("todos.json").then(res => {
+            const newList = res.data.map((plainTodo)=> new TodoMission(plainTodo));
+            setTodoList(newList);
+            activCounter = newList.filter(todo => (todo.isComplete)).size;
+
+        });   
+    },);
+
+    todoFilterAll ? (listToView = todoList.map(todo => <TodoCard todo={todo}/>)) : (
+        todoFilterComplete? )
+    
+    listToView = todoList.map(todo => <TodoCard todo={todo}/>);
+
+    useEffect(() => {
+        todoFilterAll ? setTodoList(newList) : setTodoList(newList.filter(todo => (todo.isComplete === todoFilterIsComplete)));
+        activCounter = newList.filter(todo => (todo.isComplete)).size;
+        listToView = todoList.map(todo => <TodoCard todo={todo}/>);
+
     },[todoFilter]);
 
-    listToView = todoList.map(todo => <TodoCard todo={todo}/>);
+
+
+
 
     return(
         <div>
             {listToView}
             <Card>
                 <Card.Body>{activCounter} items left</Card.Body>
-                <Button>All</Button>
-                <Button>Active</Button>
-                <Button>Completed</Button>
+                <Button value={1} onClick={setTodoFilterAll(true)}>All</Button>
+                <Button value={2} onClick={setTodoFilterIsComplete(false)}>Active</Button>
+                <Button value={3} onClick={setTodoFilterIsComplete(false)}>Completed</Button>
             </Card>
         </div>
         
@@ -38,4 +58,4 @@ function todoPage(props){
 }
 
 
-export default todoPage;
+export default TodoPage;

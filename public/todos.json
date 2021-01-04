@@ -1,8 +1,10 @@
 [
     {
-        "1":    "bla"
+        "text":     "bla",
+        "isComplete":   false
     },
     {
-        "2":    "bla2"
+        "text":     "bla2",
+        "isComplete":   false
     }
 ]
