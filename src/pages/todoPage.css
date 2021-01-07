@@ -1,0 +1,11 @@
+.container-tpage{
+    width: 65%;
+}
+
+.container-tpage .btn{
+    margin: 5px;
+}
+
+.d-cards .row{
+    justify-content: center;
+}

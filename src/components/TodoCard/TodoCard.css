@@ -1,0 +1,31 @@
+.r-TodoCard{
+    justify-content: center;
+}
+
+.r-TodoCard .card{
+    width: 70%;
+    height: 50px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.r-TodoCard .form-check-input:checked + .form-check-label{
+    text-decoration-line: line-through;
+}
+
+.r-TodoCard .card{
+    text-align: left;
+}
+
+.r-TodoCard .btn{
+    display: none;
+    margin-left: auto;
+    border-radius: 50%;
+    color: red;
+    background-color: rgba(220, 220, 220, 0.363);
+    border-color: transparent;
+}
+
+.r-TodoCard:hover .btn{
+    display: inline-block;
+}

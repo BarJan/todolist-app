@@ -1,6 +1,6 @@
 class TodoMission{
 
-    constructor(todoMissionOrText, status){
+    constructor(todoMissionOrText, isComplete){
         
         if(typeof todoMissionOrText === "object"){
             this.text = todoMissionOrText.text;
@@ -8,7 +8,7 @@ class TodoMission{
         }
         else{
             this.text = todoMissionOrText;
-            this.isComplete = status;
+            this.isComplete = isComplete;
         }
     }
 
