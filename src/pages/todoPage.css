@@ -1,11 +1,39 @@
-.container-tpage{
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
+
+
+.tpage .jumbotron .container h1{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 100px;
+    font-weight: bolder;
+}
+
+.tpage .container-tpage{
     width: 65%;
 }
 
-.container-tpage .btn{
+.tpage .container-tpage .d-cards{
+    justify-content: center;
+}
+
+.tpage .container-tpage .d-cards .row{
+    width: auto;
+    justify-content: center;
+}
+
+.tpage .container-tpage .d-cards .tPage-btns-row .card{
+    width: 75%;
+    flex-direction: row;
+    border: none;
+}
+
+.tpage .container-tpage .d-cards .row .card .row{
+    flex-direction: roגw;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.tpage .container-tpage .d-cards .row .card .row .btn{
     margin: 5px;
 }
 
-.d-cards .row{
-    justify-content: center;
-}
+

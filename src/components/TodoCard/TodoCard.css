@@ -3,21 +3,19 @@
 }
 
 .r-TodoCard .card{
-    width: 70%;
+    width: 75%;
     height: 50px;
     align-items: center;
     flex-direction: row;
+    text-align: left;
+
 }
 
 .r-TodoCard .form-check-input:checked + .form-check-label{
     text-decoration-line: line-through;
 }
 
-.r-TodoCard .card{
-    text-align: left;
-}
-
-.r-TodoCard .btn{
+.r-TodoCard .card .btn{
     display: none;
     margin-left: auto;
     border-radius: 50%;

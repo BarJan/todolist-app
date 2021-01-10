@@ -2,10 +2,6 @@ import { useEffect, useState } from "react";
 import { FormControl, InputGroup, Row } from "react-bootstrap";
 import TodoMission from "../../models/TodoMission";
 
-
-
-
-
 function InputField(props){
     const {addNewTask} = props;
     const [newTask, setNewTask] = useState("");
@@ -30,7 +26,7 @@ function InputField(props){
                         Write here:
                     </InputGroup.Text>
                 </InputGroup.Prepend>
-                <FormControl id="basic-url" value={inputValue} aria-describedby="basic-addon3" as="textarea" rows={1} onKeyUp ={(e) =>{if (e.keyCode === 13) {
+                <FormControl id="basic-url" value={inputValue} aria-describedby="basic-addon3" as="textarea" rows={3} onKeyUp ={(e) =>{if (e.keyCode === 13) {
                                                                                                                 e.preventDefault();
                                                                                                                 setNewTask(e.target.value)
                                                                                                                 }
