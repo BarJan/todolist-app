@@ -5,60 +5,54 @@ import { Button, Card, CardColumns, Container, Jumbotron, Row } from "react-boot
 import TodoCard from "../components/TodoCard/TodoCard";
 import InputField from "../components/InputField/InputField";
 
-const { useState, useEffect } = require("react");
+const { useState } = require("react");
 
 function TodoPage(props){
-    //const {taskList} = props;
-    const [todoList, setTodoList] = useState([]);//taskList);
+    const [todoList, setTodoList] = useState([]);
     const [todoFilter, setTodoFilter] = useState("all");
     const [activeCounter, setActiveCounter] = useState(0);
     
     let listToView = [];
 
-    // useEffect(()=>{
-    //     UpdateCounter();
-    //     listToView = Filter();
-    // },[todoList]);
-
     function Filter() {
         if(todoFilter === "active"){
-            return(todoList.filter(todo=>!(todo.isComplete)).map((todo,index) => <TodoCard key={index} ind={index} updateCnt={UpdateCounter} updateTask={UpdateTodo} removeT={RemoveTask} todo={todo}/>));
+            return(todoList.filter(todo=>!(todo.isComplete)).map((todo,index) => <TodoCard key={index} updateTask={UpdateTodo} removeT={RemoveTask} todo={todo}/>));
         }
         else if(todoFilter === "complete"){
-            return(todoList.filter(todo=>(todo.isComplete)).map((todo,index) => <TodoCard key={index} ind={index} updateCnt={UpdateCounter} updateTask={UpdateTodo} removeT={RemoveTask} todo={todo}/>));
+            return(todoList.filter(todo=>(todo.isComplete)).map((todo,index) => <TodoCard key={index} updateTask={UpdateTodo} removeT={RemoveTask} todo={todo}/>));
         }
-        return(todoList.map((todo,index) => <TodoCard key={index} ind={index} updateCnt={UpdateCounter} updateTask={UpdateTodo} removeT={RemoveTask} todo={todo}/>));
+        return(todoList.map((todo,index) => <TodoCard key={index} updateTask={UpdateTodo} removeT={RemoveTask} todo={todo}/>));
     }
 
-    function UpdateCounter(){
-        setActiveCounter(todoList.filter(todo=>!(todo.isComplete)).length);
+    function UpdateCounter(newTList){
+        if(newTList.length === 0)
+            setActiveCounter(0);
+        else
+            setActiveCounter(newTList.filter(todo=>!(todo.isComplete)).length);
     }
 
     function UpdateTodo(id){
-        let newTList = todoList;
+        let newTList = [...todoList];
         const found = newTList.find(todo => todo.id === id);
         found.isComplete = true;
         setTodoList(newTList);
+        UpdateCounter(newTList);
     }
 
     function AddNewTodo(newTodo){
-        let newTList = todoList;
+        let newTList = [...todoList];
         newTList.push(newTodo);
-        UpdateCounter();
         setTodoList(newTList);
+        UpdateCounter(newTList);
     }
 
     function RemoveTask(id){
-        let newTList = todoList;
-        // const index = newTList.indexOf((todo) => {todo.id === id});
-        // if (index > -1) {
-        //     newTList.splice(index, 1);
-        // }
-        const toDlt = newTList.find(todo => todo.id===id);
+        let newTList = [...todoList];
+        const toDlt = newTList.find(todo => todo.id === id);
         const index = newTList.indexOf(toDlt);
         newTList.splice(index, 1);
-        UpdateCounter();
         setTodoList(newTList);
+        UpdateCounter(newTList);
     }
 
     listToView = Filter();

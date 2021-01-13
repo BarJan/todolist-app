@@ -2,15 +2,15 @@ import uuid from 'react-uuid'
 
 class TodoMission{
 
-    constructor(todoMissionOrText, id= uuid(), isComplete){
+    constructor(todoMissionOrText, isComplete){
         
         if(typeof todoMissionOrText === "object"){
-            this.id = id;
+            this.id = uuid();
             this.text = todoMissionOrText.text;
             this.isComplete = todoMissionOrText.isComplete;
         }
         else{
-            this.id = id;
+            this.id = uuid();
             this.text = todoMissionOrText;
             this.isComplete = isComplete;
         }

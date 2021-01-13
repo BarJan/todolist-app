@@ -3,21 +3,14 @@ import { Button, Card, FormCheck, Modal, Row } from "react-bootstrap";
 import "../TodoCard/TodoCard.css"
 
 function TodoCard (props){
-    const {ind, updateCnt, updateTask, removeT, todo} = props;
-    const [checkStatus, setCheckStatus] = useState(todo.isComplete);
+    const { updateTask, removeT, todo} = props;
     const [deleteTask, setDeleteTask] = useState(false);
     
-    function ChangedStatus(){
-        todo.isComplete = true;
-        updateCnt();
-        setCheckStatus(true);
-    }
-
     return(
             <Row  className={"r-TodoCard"}>
                 <Card>
-                    <FormCheck disabled={checkStatus} type="checkbox" checked={checkStatus} label={todo.text} onChange={()=> ChangedStatus()}/>
-                    <Button id="delete" type="button" onClick={()=> {checkStatus? removeT(todo.id) : setDeleteTask(true);}}>X</Button>
+                    <FormCheck disabled={todo.isComplete} type="checkbox" checked={todo.isComplete} label={todo.text} onChange={()=> updateTask(todo.id)}/>
+                    <Button id="delete" type="button" onClick={()=> {todo.isComplete? removeT(todo.id) : setDeleteTask(true);}}>X</Button>
                 </Card>
                 {deleteTask ?
                 <Modal.Dialog>
