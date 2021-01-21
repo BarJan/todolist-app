@@ -1,7 +1,7 @@
 import axios from "axios";
 import "../pages/TodoPage.css"
 import TodoMission from "../models/TodoMission"
-import { Button, Card, CardColumns, Container, Jumbotron, Row } from "react-bootstrap";
+import { Button, Card, CardColumns, Col, Container, Jumbotron, Row } from "react-bootstrap";
 import TodoCard from "../components/TodoCard/TodoCard";
 import InputField from "../components/InputField/InputField";
 
@@ -66,21 +66,29 @@ function TodoPage(props){
             </Jumbotron>
             <Container className={"container-tpage"}>
                 <InputField addNewTask={AddNewTodo} />
-                <div className={"d-cards"}>
-                    <Container>
+                <Row className={"d-card"}>
                         {listToView}
-                        <Row className="tPage-btns-row">
-                            <Card>
-                                <h3>{activeCounter} items left</h3>
-                                <Row>
-                                    <Button value={1} onClick={()=> setTodoFilter("all")}>All</Button>
-                                    <Button value={2} onClick={()=> setTodoFilter("active")}>Active</Button>
-                                    <Button value={3} onClick={()=> setTodoFilter("complete")}>Completed</Button>    
-                                </Row>
-                            </Card>
+                </Row>
+                <Row className="tpage-info-row">
+                    <Col md={6}>
+                        <Row className="tpage-active-sum">
+                            <h3>{activeCounter} items left</h3>
                         </Row>
-                    </Container>
-                </div>
+                    </Col>
+                    <Col md={6}>
+                        <Row className="tpage-btns-row">
+                            <Col md={3}>
+                                <Button variant={todoFilter==="all" ? "secondary" : "outline-secondary"} value={1} onClick={()=> setTodoFilter("all")}>All</Button>
+                            </Col>
+                            <Col md={3}>
+                                <Button variant={todoFilter==="active" ? "secondary" : "outline-secondary"} value={2} onClick={()=> setTodoFilter("active")}>Active</Button>
+                            </Col>
+                            <Col md={3}>
+                                <Button variant={todoFilter==="complete" ? "secondary" : "outline-secondary"} value={3} onClick={()=> setTodoFilter("complete")}>Completed</Button>    
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
             </Container>
         </div>
         

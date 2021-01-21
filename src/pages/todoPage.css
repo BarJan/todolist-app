@@ -11,29 +11,10 @@
     width: 65%;
 }
 
-.tpage .container-tpage .d-cards{
+.tpage .tpage-active-sum{
     justify-content: center;
 }
 
-.tpage .container-tpage .d-cards .row{
-    width: auto;
-    justify-content: center;
+.tpage .tpage-btns-row{
+    justify-content: space-evenly;
 }
-
-.tpage .container-tpage .d-cards .tPage-btns-row .card{
-    width: 75%;
-    flex-direction: row;
-    border: none;
-}
-
-.tpage .container-tpage .d-cards .row .card .row{
-    flex-direction: roגw;
-    margin-left: auto;
-    margin-right: 0;
-}
-
-.tpage .container-tpage .d-cards .row .card .row .btn{
-    margin: 5px;
-}
-
-
