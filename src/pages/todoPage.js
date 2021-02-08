@@ -93,7 +93,7 @@ function TodoPage(props){
             <Jumbotron>
                 <Container>
                     <img src={logo} />
-                    <h1>reacToDo List</h1>
+                    <h1>reacToDo-List</h1>
                 </Container>
             </Jumbotron>
             <Container className={"container-tpage"}>

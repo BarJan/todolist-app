@@ -94,11 +94,14 @@
     }
 
     .tpage .jumbotron .container img{
+        display: inline-block;
         float: none;
-        width: 50%;
+        width: 40%;
         margin: auto;
     }
     .tpage .jumbotron .container h1{
+        display: inline-block;
+        margin: auto;
         font-family: 'Shadows Into Light', cursive;
         font-size: 50px;
         font-weight: bolder;
