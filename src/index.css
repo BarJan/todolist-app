@@ -20,3 +20,15 @@ code {
   width: 100%;
   height: 2.5rem;            /* Footer height */
 }
+
+#foot-credit{
+  float: right;
+  padding-right: 2vw;
+}
+
+@media screen and (max-width: 992px) {
+  #foot-credit{
+    float: left;
+    padding-left: 5vw;
+  }
+}
