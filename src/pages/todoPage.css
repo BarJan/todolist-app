@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap');
 
 
+.tpage .jumbotron{
+    background-image:   linear-gradient(180deg, lightgreen, white);
+}
+
 .tpage .jumbotron .container h1{
     font-family: 'Shadows Into Light', cursive;
     font-size: 100px;
     font-weight: bolder;
+    background: -webkit-linear-gradient(white, #aaa, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .tpage .container-tpage{
@@ -17,4 +24,13 @@
 
 .tpage .tpage-btns-row{
     justify-content: space-evenly;
+}
+
+.tpage .tpage-btns-row .btn{
+    margin-top: 5px;
+    color: lightgreen;
+    border-color: lightgreen;
+    text-align: center;
+    padding: 0;
+    width: 100%;
 }
