@@ -2,10 +2,18 @@
 
 
 .tpage .jumbotron{
-    background-image:   linear-gradient(180deg, rgb(97, 148, 97),  white);
+    background-image:   linear-gradient(180deg,  rgb(212, 152, 117) ,  white);
+}
+
+.tpage .jumbotron .container img{
+    width: 150px;
+    display: inline;
+    margin-right: 25px;
+    float: left;
 }
 
 .tpage .jumbotron .container h1{
+    display: inline;
     font-family: 'Shadows Into Light', cursive;
     font-size: 100px;
     font-weight: bolder;
@@ -16,20 +24,76 @@
 
 .tpage .container-tpage{
     width: 65%;
+    padding: 0;
 }
 
 .tpage .tpage-active-sum{
-    justify-content: center;
+    justify-content: left;
 }
 
 .tpage .tpage-btns-row{
-    justify-content: space-evenly;
+
+    justify-content: space-between;
 }
 
-.tpage .tpage-btns-row .btn{
+.tpage .tpage-btns-row .btn-secondary{
     margin-top: 5px;
-    color:  rgb(97, 148, 97);
-    border-color:  rgb(97, 148, 97);
+    background-color: rgb(197, 196, 196);
+    color:  rgb(155, 107, 46);
+    border-color:  rgb(155, 107, 46);
     text-align: center;
     width: 100%;
+}
+
+.tpage .tpage-btns-row .btn-outline-secondary{
+    margin-top: 5px;
+    color:  rgb(155, 107, 46);
+    border-color:  rgb(155, 107, 46);
+    text-align: center;
+    width: 100%;
+}
+
+.container-tpage .d-card{
+    height: 40vh;
+    overflow: auto;
+}
+
+.tpage-info-row{
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.deleteAll{
+    margin-left: auto;
+    border-radius: 50px;
+    color: rgb(155, 107, 46);
+    background-color: rgba(220, 220, 220, 0.363);
+    border-color: transparent;
+}
+
+.deleteAll:hover{
+    border-radius: 50px;
+    color: rgb(155, 107, 46);
+    background-color: rgba(220, 220, 220, 0.76);
+    border-color: transparent;
+}
+
+@media screen and (max-width: 772px) {
+    .tpage .jumbotron .container{
+        text-align: center;
+    }
+
+    .tpage .jumbotron .container img{
+        float: none;
+        width: 40%;
+        margin: auto;
+    }
+    .tpage .jumbotron .container h1{
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 50px;
+        font-weight: bolder;
+        background: -webkit-linear-gradient(white, #aaa, #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }

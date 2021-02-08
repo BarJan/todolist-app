@@ -16,11 +16,11 @@ function InputField(props){
 
 
     return(
-        <Row>
+        <Row className="inFild">
             <label htmlFor="basic-url">Enter a new task to your ToDo-list</label>
             <InputGroup className="mb-3">
 
-                <FormControl id="basic-url" value={inputValue} aria-describedby="basic-addon3" as="textarea" rows={3} onKeyUp ={(e) =>{if (e.keyCode === 13) {
+                <FormControl id="basic-url" value={inputValue} aria-describedby="basic-addon3" as="textarea" rows={1} onKeyUp ={(e) =>{if (e.keyCode === 13) {
                                                                                                                 e.preventDefault();
                                                                                                                 addTask(e.target.value)
                                                                                                                 }

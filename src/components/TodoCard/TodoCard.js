@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card, FormCheck, Modal, Row } from "react-bootstrap";
+import { Button, Card, Form, FormCheck, FormGroup, Modal, Row } from "react-bootstrap";
 import "../TodoCard/TodoCard.css"
 
 function TodoCard (props){
@@ -9,7 +9,9 @@ function TodoCard (props){
     return(
             <Row  className={"r-TodoCard"}>
                 <Card>
-                    <FormCheck disabled={todo.isComplete} type="checkbox" checked={todo.isComplete} label={todo.text} onChange={()=> updateTask(todo.id)}/>
+                    <Form.Group >
+                        <Form.Check disabled={todo.isComplete} type="checkbox" checked={todo.isComplete} label={todo.text} onChange={()=> updateTask(todo.id)}/>
+                    </Form.Group>
                     <Button id="delete" type="button" onClick={()=> {todo.isComplete? removeT(todo.id) : setDeleteTask(true);}}>X</Button>
                 </Card>
                 {deleteTask ?
