@@ -66,9 +66,6 @@ function TodoPage(props){
             </Jumbotron>
             <Container className={"container-tpage"}>
                 <InputField addNewTask={AddNewTodo} />
-                <Row className={"d-card"}>
-                        {listToView}
-                </Row>
                 <Row className="tpage-info-row">
                     <Col md={6}>
                         <Row className="tpage-active-sum">
@@ -89,6 +86,10 @@ function TodoPage(props){
                         </Row>
                     </Col>
                 </Row>
+                <Row className={"d-card"}>
+                        {listToView}
+                </Row>
+                
             </Container>
         </div>
         

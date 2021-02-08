@@ -8,12 +8,12 @@ import TodoPage from './pages/TodoPage';
 function App() {
   const [taskList, setTaskList] = useState([]);
   
-  useEffect(()=>{
-      axios.get("todos.json").then(res => {
-          const newList = res.data.map(plainTodo=> new TodoMission(plainTodo));
-          setTaskList(newList);
-      });
-  },[]);
+  // useEffect(()=>{
+  //     axios.get("todos.json").then(res => {
+  //         const newList = res.data.map(plainTodo=> new TodoMission(plainTodo));
+  //         setTaskList(newList);
+  //     });
+  // },[]);
 
 
   return (
