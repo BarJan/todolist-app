@@ -13,7 +13,7 @@ function TodoCard (props){
                     <Button id="delete" type="button" onClick={()=> {todo.isComplete? removeT(todo.id) : setDeleteTask(true);}}>X</Button>
                 </Card>
                 {deleteTask ?
-                <Modal.Dialog>
+                <Modal show={deleteTask} onHide={setDeleteTask}>
                     <Modal.Header closeButton>
                         <Modal.Title>Delete Task</Modal.Title>
                     </Modal.Header>
@@ -27,7 +27,7 @@ function TodoCard (props){
                         <Button variant="secondary" onClick={()=> setDeleteTask(false)}>Cancel</Button>
                         <Button variant="primary" onClick={()=> {removeT(todo.id); setDeleteTask(false);}}>Delete</Button>
                     </Modal.Footer>
-                </Modal.Dialog>
+                </Modal>
                 : null}
             </Row>
         

@@ -17,13 +17,9 @@ function InputField(props){
 
     return(
         <Row>
-            <label htmlFor="basic-url">Enter new task for your ToDo list</label>
+            <label htmlFor="basic-url">Enter a new task to your ToDo-list</label>
             <InputGroup className="mb-3">
-                <InputGroup.Prepend>
-                    <InputGroup.Text id="basic-addon3">
-                        Write here:
-                    </InputGroup.Text>
-                </InputGroup.Prepend>
+
                 <FormControl id="basic-url" value={inputValue} aria-describedby="basic-addon3" as="textarea" rows={3} onKeyUp ={(e) =>{if (e.keyCode === 13) {
                                                                                                                 e.preventDefault();
                                                                                                                 addTask(e.target.value)
