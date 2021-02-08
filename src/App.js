@@ -1,4 +1,3 @@
-import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import './App.css';
@@ -7,18 +6,25 @@ import TodoPage from './pages/TodoPage';
 
 function App() {
   const [taskList, setTaskList] = useState([]);
-  
-  // useEffect(()=>{
-  //     axios.get("todos.json").then(res => {
-  //         const newList = res.data.map(plainTodo=> new TodoMission(plainTodo));
-  //         setTaskList(newList);
-  //     });
-  // },[]);
+
+  // useEffect(() =>{
+  //   const myStorage = localStorage;
+  //   if(myStorage.getItem('todoList') !== null){
+  //     const fromStorage = JSON.parse(myStorage.getItem('todoList')).map((todo) => new TodoMission(todo));
+  //     setTaskList(fromStorage);
+  //   }
+  // },[])
+
+  // function UpdateStorage(todoList){
+  //   const myStorage = localStorage;
+  //   const dataToStorage = JSON.stringify(todoList);
+  //   myStorage.setItem('todoList', dataToStorage);
+  // }
 
 
   return (
     <div className="App">
-      <TodoPage taskList={taskList}/>
+      <TodoPage />
     </div>
   );
 }

@@ -1,11 +1,10 @@
-import axios from "axios";
 import "../pages/TodoPage.css"
-import TodoMission from "../models/TodoMission"
-import { Button, Card, CardColumns, Col, Container, Jumbotron, Row } from "react-bootstrap";
+import { Button, Col, Container, Jumbotron, Row } from "react-bootstrap";
 import TodoCard from "../components/TodoCard/TodoCard";
 import InputField from "../components/InputField/InputField";
+import TodoMission from "../models/TodoMission";
 
-const { useState } = require("react");
+const { useState, useEffect } = require("react");
 
 function TodoPage(props){
     const [todoList, setTodoList] = useState([]);
@@ -13,6 +12,20 @@ function TodoPage(props){
     const [activeCounter, setActiveCounter] = useState(0);
     
     let listToView = [];
+
+    useEffect(() =>{
+        const myStorage = localStorage;
+        if(myStorage.getItem('todoList') !== null){
+          const fromStorage = JSON.parse(myStorage.getItem('todoList')).map((todo) => new TodoMission(todo));
+          setTodoList(fromStorage);
+        }
+      },[]);
+    
+      function updateLocalStorage(todoListTosave){
+        const myStorage = localStorage;
+        const dataToStorage = JSON.stringify(todoListTosave);
+        myStorage.setItem('todoList', dataToStorage);
+      }
 
     function Filter() {
         if(todoFilter === "active"){
@@ -35,15 +48,17 @@ function TodoPage(props){
         let newTList = [...todoList];
         const found = newTList.find(todo => todo.id === id);
         found.isComplete = true;
-        setTodoList(newTList);
+        updateLocalStorage(newTList);
         UpdateCounter(newTList);
+        setTodoList(newTList);
     }
 
     function AddNewTodo(newTodo){
         let newTList = [...todoList];
         newTList.push(newTodo);
-        setTodoList(newTList);
+        updateLocalStorage(newTList);
         UpdateCounter(newTList);
+        setTodoList(newTList);
     }
 
     function RemoveTask(id){
@@ -51,8 +66,9 @@ function TodoPage(props){
         const toDlt = newTList.find(todo => todo.id === id);
         const index = newTList.indexOf(toDlt);
         newTList.splice(index, 1);
-        setTodoList(newTList);
+        updateLocalStorage(newTList);
         UpdateCounter(newTList);
+        setTodoList(newTList);
     }
 
     listToView = Filter();
@@ -74,13 +90,13 @@ function TodoPage(props){
                     </Col>
                     <Col md={6}>
                         <Row className="tpage-btns-row">
-                            <Col lg={4} md={8} sm={8}>
+                            <Col xl={4} lg={8} md={8} sm={8} xs={8}>
                                 <Button variant={todoFilter==="all" ? "secondary" : "outline-secondary"} value={1} onClick={()=> setTodoFilter("all")}>All</Button>
                             </Col>
-                            <Col lg={4} md={8} sm={8}>
+                            <Col xl={4} lg={8} md={8} sm={8} xs={8}>
                                 <Button variant={todoFilter==="active" ? "secondary" : "outline-secondary"} value={2} onClick={()=> setTodoFilter("active")}>Active</Button>
                             </Col>
-                            <Col lg={4} md={8} sm={8}>
+                            <Col xl={4} lg={8} md={8} sm={8} xs={8}>
                                 <Button variant={todoFilter==="complete" ? "secondary" : "outline-secondary"} value={3} onClick={()=> setTodoFilter("complete")}>Completed</Button>    
                             </Col>
                         </Row>

@@ -5,7 +5,7 @@ class TodoMission{
     constructor(todoMissionOrText, isComplete){
         
         if(typeof todoMissionOrText === "object"){
-            this.id = uuid();
+            this.id = todoMissionOrText.id !== null ? todoMissionOrText.id : uuid();
             this.text = todoMissionOrText.text;
             this.isComplete = todoMissionOrText.isComplete;
         }
