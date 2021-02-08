@@ -99,12 +99,12 @@ function TodoPage(props){
             <Container className={"container-tpage"}>
                 <InputField addNewTask={AddNewTodo} />
                 <Row className="tpage-info-row">
-                    <Col md={6}>
+                    <Col md={6} style={{padding: 0, margin:0}}>
                         <Row className="tpage-active-sum">
                             <h3>{activeCounter} items left</h3>
                         </Row>
                     </Col>
-                    <Col md={6} style={{paddingRight: 0}}>
+                    <Col md={6} style={{padding: 0}}>
                         <Row className="tpage-btns-row">
                             <Col xl={4} lg={8} md={8} sm={8} xs={8}>
                                 <Button variant={todoFilter==="all" ? "secondary" : "outline-secondary"} value={1} onClick={()=> setTodoFilter("all")}>All</Button>

@@ -79,6 +79,16 @@
 }
 
 @media screen and (max-width: 772px) {
+
+    .tpage .tpage-active-sum{
+        justify-content: center;
+    }
+
+    .tpage .tpage-btns-row{
+
+        justify-content: center;
+    }
+
     .tpage .jumbotron .container{
         text-align: center;
     }
