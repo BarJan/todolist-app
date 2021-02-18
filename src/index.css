@@ -28,6 +28,10 @@ code {
 }
 
 @media screen and (max-width: 772px) {
+  #footer{
+    height: max-content;
+  }
+
   #foot-credit{
     float: left;
     padding-left: 5vw;

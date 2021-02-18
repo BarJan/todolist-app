@@ -106,13 +106,13 @@ function TodoPage(props){
                     </Col>
                     <Col md={6} style={{padding: 0}}>
                         <Row className="tpage-btns-row">
-                            <Col xl={4} lg={8} md={8} sm={8} xs={8}>
+                            <Col xl={4} lg={8} md={8} sm={8} xs={4}>
                                 <Button variant={todoFilter==="all" ? "secondary" : "outline-secondary"} value={1} onClick={()=> setTodoFilter("all")}>All</Button>
                             </Col>
-                            <Col xl={4} lg={8} md={8} sm={8} xs={8}>
+                            <Col xl={4} lg={8} md={8} sm={8} xs={4}>
                                 <Button variant={todoFilter==="active" ? "secondary" : "outline-secondary"} value={2} onClick={()=> setTodoFilter("active")}>Active</Button>
                             </Col>
-                            <Col xl={4} lg={8} md={8} sm={8} xs={8}>
+                            <Col xl={4} lg={8} md={8} sm={8} xs={4}>
                                 <Button variant={todoFilter==="complete" ? "secondary" : "outline-secondary"} value={3} onClick={()=> setTodoFilter("complete")}>Completed</Button>    
                             </Col>
                         </Row>

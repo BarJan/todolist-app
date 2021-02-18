@@ -54,7 +54,7 @@
 }
 
 .container-tpage .d-card{
-    height: 40vh;
+    padding-bottom: 60px;
     overflow: auto;
 }
 
@@ -89,6 +89,19 @@
         justify-content: center;
     }
 
+    .tpage .tpage-btns-row > .col-4{
+        padding: 0 2px;
+    }
+
+    .tpage .tpage-btns-row .btn{
+        padding: 0;
+    }
+
+    .tpage .jumbotron{
+        height: 25vh;
+        margin-bottom: 1rem;
+    }
+
     .tpage .jumbotron .container{
         text-align: center;
     }
@@ -96,9 +109,10 @@
     .tpage .jumbotron .container img{
         display: inline-block;
         float: none;
-        width: 40%;
+        width: 20%;
         margin: auto;
     }
+
     .tpage .jumbotron .container h1{
         display: inline-block;
         margin: auto;
@@ -108,5 +122,10 @@
         background: -webkit-linear-gradient(white, #aaa, #333);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .container-tpage .d-card{
+        margin-bottom: 15px;
+        overflow: auto;
     }
 }
