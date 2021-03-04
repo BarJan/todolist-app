@@ -1,4 +1,4 @@
-*ReacTodo-List
+#ReacTodo-List
 
 Link to github pages: https://barjan.github.io/todolist-app/.
 
@@ -6,7 +6,7 @@ A web application developed from scratch using React.js.
 
 The app is responsive and uses various web-development’s tools:
 
-html | React.js| local storage | css | git
+html | React.js| local storage | css | git | react hooks | react router
 
 **Enjoy!
 
