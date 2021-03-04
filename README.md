@@ -1,4 +1,4 @@
-#ReacTodo-List
+# ReacTodo-List
 
 Link to github pages: https://barjan.github.io/todolist-app/.
 
@@ -8,7 +8,7 @@ The app is responsive and uses various web-development’s tools:
 
 html | React.js| local storage | css | git | react hooks | react router
 
-**Enjoy!
+##  Enjoy!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
