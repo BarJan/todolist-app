@@ -1,4 +1,4 @@
-**ReacTodo-List
+*ReacTodo-List
 
 Link to github pages: https://barjan.github.io/todolist-app/.
 
